@@ -53,7 +53,8 @@ These provide:
 
 ## Example
 ```Python
-from pypolypart import optimal_convex_partition2
+from pypolypart import optimal_convex_partition_2
+
 def main() -> None:
     polygon = [
         (391, 374),
