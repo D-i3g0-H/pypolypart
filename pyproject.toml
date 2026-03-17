@@ -1,0 +1,38 @@
+[build-system]
+requires = ["scikit-build-core>=0.12", "pybind11>=2.11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "pypolypart"
+version = "0.1.0"
+description = "Python bindings for CGAL 2D Polygon Partitioning"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+  { name = "Diego Hernández Estrada" }
+]
+license = "GPL-3.0-or-later"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: C++",
+  "Operating System :: POSIX :: Linux",
+]
+
+[project.urls]
+Homepage = "https://github.com/D-i3g0-H/pypolypart"
+Repository = "https://github.com/D-i3g0-H/pypolypart"
+
+[tool.scikit-build]
+cmake.build-type = "Release"
+build-dir = "build/{wheel_tag}"
+wheel.packages = ["src/pypolypart"]
+
+sdist.exclude = [
+  ".venv/",
+  "build/",
+  "dist/",
+  "*.egg-info/",
+  "**/__pycache__/",
+  "*.pyc",
+]
