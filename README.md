@@ -13,6 +13,44 @@ Python bindings for CGAL 2D Polygon Partitioning.
 pip install pypolypart
 ```
 
+Pip will:
+1. Download the source package (.tar.gz)
+2. Compile the C++ extension using CMake
+3. Link against your locally installed CGAL libraries
+
+If dependencies are missing, installation will fail with a compiler or CMake error.
+
+## Important
+
+This package contains compiled C++ extension and is currently distributed as a *source distribution only*.
+This means it will be built locally during installation and requires a working C++ toolchain and CGAL installed in your system.
+
+## System Requirements
+
+### Linux (Ubuntu 24.04 recommended)
+Install the required system dependencies:
+
+```bash
+sudo apt update
+sudo apt install -y \
+  build-essential \
+  python3.12-dev \
+  libcgal-dev \
+  libboost-dev \
+  libgmp-dev \
+  libmpfr-dev
+```
+
+These provide:
+- C++ compiler (g++)
+- CGAL headers and libraries
+- Required math libraries (GMP, MPFR)
+- Boost dependencies
+
+### Other Platforms
+- *macOS*: You may be able to install dependencies via brew install cgal, but this is not officially tested.
+- *Windows*: Not currently supported (requires manual CGAL + toolchain setup.)
+
 ## Example
 ```Python
 from pypolypart import optimal_convex_partition2
@@ -51,11 +89,6 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 ```
-
-## Requirements
-- Linux
-- Python 3.12+
-- CGAL runtime/build dependencies as documented
 
 ## License
 
